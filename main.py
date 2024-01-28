@@ -3,6 +3,9 @@ from bs4 import BeautifulSoup
 # Read html file and print existing content
 with open('home.html', 'r') as html_file:
     content = html_file.read()
-    # Use Beautiful soup to prettify html content 
+    # Use Beautiful soup to render html content 
     soup = BeautifulSoup(content, 'lxml')
-    print(soup.prettify())
+    # Find specific tag element in the html content
+    tags = soup.find('h5')
+
+    print(tags)
