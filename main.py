@@ -5,9 +5,15 @@ with open('home.html', 'r') as html_file:
     content = html_file.read()
     # Use Beautiful soup to render html content 
     soup = BeautifulSoup(content, 'lxml')
-    # Find specified tag element in the html content
-    course_title_tags = soup.find_all('h5')
+    # Find element by div tag and class attribute
+    course_cards = soup.find_all('div', class_='card')
 
-    # Looping through each course title
-    for course in course_title_tags:
-        print(course.text)
+    # Looping through each course card for course details
+    for course in course_cards:
+        course_name = course.h5.text
+        course_description = course.p.text
+        course_price = course.a.text.split()[-1]
+
+        print("Course:",course_name)
+        print("Course Description:",course_description)
+        print("Course Price: ",course_price)
