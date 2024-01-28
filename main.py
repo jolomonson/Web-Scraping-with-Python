@@ -6,6 +6,6 @@ with open('home.html', 'r') as html_file:
     # Use Beautiful soup to render html content 
     soup = BeautifulSoup(content, 'lxml')
     # Find specific tag element in the html content
-    tags = soup.find('h5')
+    tags = soup.find_all('h5')
 
     print(tags)
