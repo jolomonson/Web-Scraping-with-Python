@@ -5,7 +5,9 @@ with open('home.html', 'r') as html_file:
     content = html_file.read()
     # Use Beautiful soup to render html content 
     soup = BeautifulSoup(content, 'lxml')
-    # Find specific tag element in the html content
-    tags = soup.find_all('h5')
+    # Find specified tag element in the html content
+    course_title_tags = soup.find_all('h5')
 
-    print(tags)
+    # Looping through each course title
+    for course in course_title_tags:
+        print(course.text)
