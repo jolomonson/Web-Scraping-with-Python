@@ -14,6 +14,4 @@ with open('home.html', 'r') as html_file:
         course_description = course.p.text
         course_price = course.a.text.split()[-1]
 
-        print("Course:",course_name)
-        print("Course Description:",course_description)
-        print("Course Price: ",course_price)
+        print(course_name,'-',course_description,'It costs',course_price)
