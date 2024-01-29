@@ -5,4 +5,7 @@ import requests
 html_text = requests.get('https://www.jumia.com.ng/catalog/?q=sneakers+for+men').text
 soup = BeautifulSoup(html_text, 'lxml')
 
-print(soup.prettify())
+sneakers = soup.find('article', class_='prd _fb col c-prd')
+sneaker_name = sneakers.find('h3', class_='name').text
+
+print(sneaker_name)
