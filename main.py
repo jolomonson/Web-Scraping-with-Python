@@ -15,3 +15,5 @@ for sneaker in sneakers:
     print("Name: ",sneaker_name)
     print("Price: ",sneaker_price)
     print("Rating: ",sneaker_rating)
+
+    print('')
